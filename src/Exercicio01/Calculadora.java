@@ -16,13 +16,8 @@ public class Calculadora {
 
     public static double divisao(double num1, double num2) {
         if(num2 == 0) {
-            do {
-                System.out.println("\nErro: Divisão por 0!!");
-                System.out.println("<<-- Informe novos numeros -->>");
-                num1 = MainCalculadora.catchPrimeiroNum();
-                num2 = MainCalculadora.catchSegundoNun();
-            }while (num2 == 0);
+            return Double.NaN;
         }
-        return num1 / num2;
+        return num1/num2;
     }
 }

@@ -1,16 +1,17 @@
 package Exercicio01;
 
+import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 public class MainCalculadora {
     private static final Scanner ler = new Scanner(System.in);
 
-    public static double catchPrimeiroNum() {
+    public static double pegarPrimeiroNum() {
         System.out.print("Digite o primeiro numero: ");
         return Double.parseDouble(ler.nextLine());
     }
 
-    public static double catchSegundoNun() {
+    public static double pegarSegundoNun() {
         System.out.print("Digite o segundo numero: ");
         return Double.parseDouble(ler.nextLine());
     }
@@ -39,25 +40,31 @@ public class MainCalculadora {
                     System.out.println("\n\n-----------------------------");
                     System.out.println("|      <<-- SOMA -->>       |");
                     System.out.println("-----------------------------");
-                    mostrarResultado(Calculadora.soma(catchPrimeiroNum(), catchSegundoNun()), "soma");
+                    mostrarResultado(Calculadora.soma(pegarPrimeiroNum(), pegarSegundoNun()), "soma");
                     break;
                 case 2:
                     System.out.println("\n\n-----------------------------");
                     System.out.println("|    <<-- SUBTRACAO -->>    |");
                     System.out.println("-----------------------------");
-                    mostrarResultado(Calculadora.subtracao(catchPrimeiroNum(), catchSegundoNun()), "subtração");
+                    mostrarResultado(Calculadora.subtracao(pegarPrimeiroNum(), pegarSegundoNun()), "subtração");
                     break;
                 case 3:
                     System.out.println("\n\n-----------------------------");
                     System.out.println("|  <<-- Multiplicação -->>  |");
                     System.out.println("-----------------------------");
-                    mostrarResultado(Calculadora.multiplicacao(catchPrimeiroNum(), catchSegundoNun()), "multiplicação");
+                    mostrarResultado(Calculadora.multiplicacao(pegarPrimeiroNum(), pegarSegundoNun()), "multiplicação");
                     break;
                 case 4:
                     System.out.println("\n\n-----------------------------");
                     System.out.println("|     <<-- DIVISÃO -->>     |");
                     System.out.println("-----------------------------");
-                    mostrarResultado(Calculadora.divisao(catchPrimeiroNum(), catchSegundoNun()), "divisão");
+                    double resultado = Calculadora.divisao(pegarPrimeiroNum(), pegarSegundoNun());
+
+                    if(Double.isNaN(resultado)) {
+                        System.out.println("Erro: Divisão por 0");
+                    } else {
+                        mostrarResultado(resultado, "divisão");
+                    }
                     break;
                 case 0:
                     System.out.println("Saindo...");
