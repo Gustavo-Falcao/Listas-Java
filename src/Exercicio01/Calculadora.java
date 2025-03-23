@@ -15,13 +15,13 @@ public class Calculadora {
     }
 
     public static double divisao(double num1, double num2) {
-        if(num1 <= 0 || num2 <= 0) {
+        if(num2 == 0) {
             do {
-                System.out.println("\nErro na divisão por 0!!");
+                System.out.println("\nErro: Divisão por 0!!");
                 System.out.println("<<-- Informe novos numeros -->>");
                 num1 = MainCalculadora.catchPrimeiroNum();
                 num2 = MainCalculadora.catchSegundoNun();
-            }while (num1 <= 0 || num2 <= 0);
+            }while (num2 == 0);
         }
         return num1 / num2;
     }

@@ -65,6 +65,6 @@ public class MainCalculadora {
                 default: System.out.println("\n<<Escolha uma opção existente!!>>"); break;
             }
         } while(opcao != 0);
-
+        ler.close();
     }
 }
