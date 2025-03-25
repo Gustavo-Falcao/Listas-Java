@@ -118,6 +118,7 @@ public class MainContaBancaria {
                 break;
             }
         }while(true);
+        ler.close();
     }
 }
 
