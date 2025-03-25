@@ -113,9 +113,12 @@ public class MainContaBancaria {
                     System.out.println("Conta não encontrada!!");
                 }
             }
-            else {
+            else if(opcao == 0) {
                 System.out.println("Saindo...");
                 break;
+            }
+            else {
+               System.out.println("ERRO --> Informe uma opção existente!!");
             }
         }while(true);
         ler.close();
