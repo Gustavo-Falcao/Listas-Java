@@ -23,20 +23,27 @@ public class MainContaBancaria {
         int opcao;
 
         do {
-            System.out.println("\n\n<<-- Conta Bancaria -->>");
-            System.out.println("   #- [1] Cadastrar conta");
-            System.out.println("   #- [2] Acessar conta");
-            System.out.println("   #- [0] Sair");
-            System.out.print("  #- Escolha uma opção: ");
+            System.out.println("\n\n------------------------------");
+            System.out.println("|  <<-- Conta Bancaria -->>  |");
+            System.out.println("------------------------------");
+            System.out.println("|   #- [1] Cadastrar conta   | ");
+            System.out.println("|   #- [2] Acessar conta     |");
+            System.out.println("|   #- [0] Sair              |");
+            System.out.println("------------------------------");
+            System.out.print("#- Escolha uma opçao: ");
             opcao = Integer.parseInt(ler.nextLine());
 
             if (opcao == 1) {
-                System.out.println(" \n<<--Cadastro da conta -->>");
+                System.out.println("\n---------------------------------");
+                System.out.println("|  <<-- Cadastro da conta -->>  |");
+                System.out.println("---------------------------------");
                 contasUsuarios.add(pegarConta());
                 System.out.println("Conta cadastrada com sucesso!!");
             }
             else if(opcao == 2) {
-                System.out.println("\n<<-- Acessar conta -->>");
+                System.out.println("\n-----------------------------");
+                System.out.println("|  <<-- Acessar conta -->>  |");
+                System.out.println("-----------------------------");
                 System.out.print("#- Informe o número da conta: ");
                 String numeroConsulta = ler.nextLine();
                 int posicao = 0;
@@ -51,27 +58,34 @@ public class MainContaBancaria {
                 if(encontrado) {
                     int op;
                     do {
-                        System.out.println("\n\n<< Conta >>");
-                        System.out.println("#- Nome do titular: " + contasUsuarios.get(posicao).getNomeTitular());
-                        System.out.println("#- Número da conta: " + contasUsuarios.get(posicao).getNumeroConta());
+                        System.out.println("\n\n-----------------------------------");
+                        System.out.println("|         <<-- Conta -->>         |");
                         System.out.println("-----------------------------------");
-                        System.out.println("  #- [1] Depositar");
-                        System.out.println("  #- [2] Sacar");
-                        System.out.println("  #- [3] Mostrar saldo");
-                        System.out.println("  #- [0] Sair");
+                        System.out.println("|  #- Nome do titular: " + contasUsuarios.get(posicao).getNomeTitular());
+                        System.out.println("|  #- Número da conta: " + contasUsuarios.get(posicao).getNumeroConta());
+                        System.out.println("-----------------------------------");
+                        System.out.println("|  #- [1] Depositar");
+                        System.out.println("|  #- [2] Sacar");
+                        System.out.println("|  #- [3] Mostrar saldo");
+                        System.out.println("|  #- [0] Sair");
+                        System.out.println("-----------------------------------");
                         System.out.print("#- Escolha uma opção: ");
                         op = Integer.parseInt(ler.nextLine());
 
                         switch (op) {
                             case 1:
-                                System.out.println("\n<<-- Depositar -->>");
+                                System.out.println("\n-------------------------");
+                                System.out.println("|  <<-- Depositar -->>  |");
+                                System.out.println("-------------------------");
                                 System.out.print("#- Digite um valor: ");
                                 double valor = Double.parseDouble(ler.nextLine());
                                 contasUsuarios.get(posicao).depositar(valor);
                                 System.out.println("Deposito realizado com sucesso!!");
                                 break;
                             case 2:
-                                System.out.println("\n<<-- Sacar -->>");
+                                System.out.println("\n---------------------");
+                                System.out.println("|  <<-- Sacar -->>  |");
+                                System.out.println("---------------------");
                                 System.out.print("#- Digite um valor: ");
                                 double val = Double.parseDouble(ler.nextLine());
                                 if(val > contasUsuarios.get(posicao).getSaldo()) {
@@ -83,7 +97,9 @@ public class MainContaBancaria {
                                 }
                                 break;
                             case 3:
-                                System.out.println("\n<<-- Saldo -->>");
+                                System.out.println("\n---------------------");
+                                System.out.println("|  <<-- Saldo -->>  |");
+                                System.out.println("---------------------");
                                 System.out.printf("##-- %.2f\n", contasUsuarios.get(posicao).getSaldo());
                                 break;
                             case 0:
@@ -93,6 +109,8 @@ public class MainContaBancaria {
 
                         }
                     }while(op != 0);
+                } else {
+                    System.out.println("Conta não encontrada!!");
                 }
             }
             else {
