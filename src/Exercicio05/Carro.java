@@ -1,7 +1,5 @@
 package Exercicio05;
 
-import javax.rmi.ssl.SslRMIClientSocketFactory;
-
 public class Carro {
 
     private final String marca;
@@ -41,7 +39,7 @@ public class Carro {
     }
 
     public void frear(double frear) {
-        if(frear > 0) {
+        if(frear > 0 && frear <= velocidadeAtual) {
             velocidadeAtual -= frear;
             System.out.println("Carro diminui a velocidade em " + frear + " km/h");
         } else {
