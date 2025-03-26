@@ -114,7 +114,9 @@ public class MainCarro {
                     }
                     break;
                 case 0:
-                    System.out.println("Saindo..."); break;
+                    System.out.println("Saindo...");
+                    break;
+                default: System.out.println("Erro -> Escolha uma opção válida!!"); break;
             }
         }while(opcao != 0);
 
