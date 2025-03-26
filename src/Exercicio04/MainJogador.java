@@ -37,11 +37,11 @@ public class MainJogador {
         }
     }
 
-    public static int pegarAtualizacao(String tipo) {
+    public static int pegarAtualizacao(String tipo, String frase) {
         System.out.println("\n-----------------------------------");
         System.out.println("  <<-- Atualizar " + tipo + " -->>");
         System.out.println("-----------------------------------");
-        System.out.print("#- Digite seu " + tipo + " atual: ");
+        System.out.print("#- Digite " + frase + tipo + ": ");
         return Integer.parseInt(ler.nextLine());
     }
 
@@ -90,11 +90,11 @@ public class MainJogador {
                             int op = Integer.parseInt(ler.nextLine());
 
                             if(op == 1) {
-                                jogadores.get(posicao).setPontuacao(pegarAtualizacao("pontuação"));
+                                jogadores.get(posicao).setPontuacao(pegarAtualizacao("pontuação", "sua nova "));
                                 System.out.println("Pontuação atualizada com sucesso!!");
                             }
                             else if(op == 2) {
-                                jogadores.get(posicao).setNivel(pegarAtualizacao("nivel"));
+                                jogadores.get(posicao).setNivel(pegarAtualizacao("nivel", "seu novo "));
                                 System.out.println("Nivel atualizado com sucesso!!");
                             }
                             else if(op == 3) {
