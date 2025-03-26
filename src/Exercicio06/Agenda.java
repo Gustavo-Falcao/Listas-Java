@@ -25,7 +25,7 @@ public class Agenda {
         String nomeBusca = ler.nextLine();
 
         for(int i = 0; i < contatos.size(); i++) {
-            if(nomeBusca.equals(contatos.get(i).getNome())) {
+            if(nomeBusca.equalsIgnoreCase(contatos.get(i).getNome())) {
                 posicao = i;
                 encontrado = true;
                 break;
