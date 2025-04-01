@@ -100,16 +100,14 @@ public class Main {
                     }
                     break;
                 case 3:
-                    int opRelatorio;
                     System.out.println("\n\n--------------------------");
                     System.out.println("|  <<-- Relatórios -->>  |");
                     System.out.println("--------------------------");
                     System.out.println("|   #- [1] Geral         |");
                     System.out.println("|   #- [2] Produto       |");
-                    System.out.println("|   #- [0] Sair          |");
                     System.out.println("--------------------------");
                     System.out.print("#- Escolha uma opção: ");
-                    opRelatorio = Integer.parseInt(ler.nextLine());
+                    int opRelatorio = Integer.parseInt(ler.nextLine());
 
                     if(opRelatorio == 1) {
                         int quantidadeProdutos = 0;
@@ -145,9 +143,6 @@ public class Main {
                         else {
                             System.out.println("Código não encontrado!!");
                         }
-                    }
-                    else if(opRelatorio == 0) {
-                        System.out.println("Saindo...");
                     }
                     else {
                         System.out.println("Escolha uma opção válida!!");

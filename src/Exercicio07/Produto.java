@@ -52,7 +52,7 @@ public class Produto {
         System.out.println("|  #>> Nome: " + nome);
         System.out.println("|  #>> Código: " + codigo);
         System.out.println("|  #>> Quantidade em estoque: " + quantEstoque);
-        System.out.printf("|  #>> Valor total em estoque: R$ %.2f", (preco*quantEstoque));
+        System.out.printf("|  #>> Valor total em estoque: R$ %.2f \n", (preco*quantEstoque));
     }
 
 }
