@@ -30,6 +30,10 @@ public class Produto {
         return  preco;
     }
 
+    public double getPrecoTotal() {
+        return preco * quantEstoque;
+    }
+
     public void adicionarEstoque(int quant) {
         quantEstoque += quant;
         System.out.println("Produto adicionado com sucesso!!");
@@ -38,17 +42,17 @@ public class Produto {
     public void removerEstoque(int quant) {
         if(quant > 0 && quant <= quantEstoque) {
             quantEstoque -= quant;
-            System.out.println("Produto removido com sucesso");
+            System.out.println("Produto removido com sucesso!!");
         } else {
-            System.out.println("Erro -> Quantidade inválida para remover");
+            System.out.println("Erro -> Quantidade inválida para remover!!");
         }
     }
 
     public void exibirInfoProduto() {
-        System.out.println("#>> Nome: " + nome);
-        System.out.println("#>> Código: " + codigo);
-        System.out.println("#>> Quantidade em estoque: " + quantEstoque);
-        System.out.println("#>> Valor total em estoque: " + (preco*quantEstoque));
+        System.out.println("|  #>> Nome: " + nome);
+        System.out.println("|  #>> Código: " + codigo);
+        System.out.println("|  #>> Quantidade em estoque: " + quantEstoque);
+        System.out.printf("|  #>> Valor total em estoque: R$ %.2f", (preco*quantEstoque));
     }
 
 }
