@@ -1,10 +1,10 @@
 package Exercicio08;
 
 public class Pedido {
-    String saborPizza;
-    String endereco;
-    String idPedido;
-    Pizza pizza;
+    private String saborPizza;
+    private String endereco;
+    private String idPedido;
+    private Pizza pizza;
 
 
     Pedido(String saborPizza, String endereco, String idPedido, Pizza pizza, String tamanho, double valor) {
@@ -27,6 +27,10 @@ public class Pedido {
 
     public String getIdPedido() {
         return idPedido;
+    }
+
+    public Pizza getPizza() {
+        return pizza;
     }
 
 }

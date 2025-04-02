@@ -1,10 +1,10 @@
 package Exercicio08;
 
 public class Pizza {
-    String nome;
-    double valor;
-    String ingredientes;
-    String tamanho;
+    private String nome;
+    private double valor;
+    private String ingredientes;
+    private String tamanho;
 
     Pizza(String nome, double valor, String ingredientes, String tamanho) {
         this.nome = nome;

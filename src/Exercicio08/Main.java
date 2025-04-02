@@ -72,23 +72,28 @@ public class Main {
                     pedidos.add(new Pedido(pizza.getNome(), endereco, idPedido, pizza, tamanho, preco));
                 break;
                 case 2:
-                    System.out.println("\n\n-------------------------------");
-                    System.out.println("|  <<-- Cancelar pedido -->>  |");
-                    System.out.println("-------------------------------");
-                    System.out.print("Informe o id do pedido: ");
-                    String idBusca = ler.nextLine();
-                    boolean removido = false;
-                    for(int i = 0; i < pedidos.size(); i++) {
-                        if(idBusca.equals(pedidos.get(i).getIdPedido())) {
-                            pedidos.remove(i);
-                            removido = true;
-                            break;
-                        }
+                    if (pedidos.isEmpty()) {
+                        System.out.println("Nenhum pedido cadastrado ainda!!");
                     }
-                    if(removido) {
-                        System.out.println("Pedido cancelado com sucesso!!");
-                    }else {
-                        System.out.println("Id não encontrado!!");
+                    else {
+                        System.out.println("\n\n-------------------------------");
+                        System.out.println("|  <<-- Cancelar pedido -->>  |");
+                        System.out.println("-------------------------------");
+                        System.out.print("Informe o id do pedido: ");
+                        String idBusca = ler.nextLine();
+                        boolean removido = false;
+                        for(int i = 0; i < pedidos.size(); i++) {
+                            if(idBusca.equals(pedidos.get(i).getIdPedido())) {
+                                pedidos.remove(i);
+                                removido = true;
+                                break;
+                            }
+                        }
+                        if(removido) {
+                            System.out.println("Pedido cancelado com sucesso!!");
+                        }else {
+                            System.out.println("Id não encontrado!!");
+                        }
                     }
                 break;
                 case 3:
@@ -99,7 +104,7 @@ public class Main {
                     double mediaPrecos = 0.0;
                     for(Pedido pedido : pedidos) {
                         numTotalPedidos ++;
-                        mediaPrecos += pedido.pizza.getValor();
+                        mediaPrecos += pedido.getPizza().getValor();
                     }
                     mediaPrecos /= numTotalPedidos;
                     System.out.println(" #>>Numero de pedidos realizados: " + numTotalPedidos);
