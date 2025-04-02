@@ -91,11 +91,9 @@ public class MainJogador {
 
                             if(op == 1) {
                                 jogadores.get(posicao).setPontuacao(pegarAtualizacao("pontuação", "sua nova "));
-                                System.out.println("Pontuação atualizada com sucesso!!");
                             }
                             else if(op == 2) {
                                 jogadores.get(posicao).setNivel(pegarAtualizacao("nivel", "seu novo "));
-                                System.out.println("Nivel atualizado com sucesso!!");
                             }
                             else if(op == 3) {
                                 System.out.println("\n--------------------------------");

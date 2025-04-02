@@ -24,10 +24,12 @@ public class Jogador {
 
     public void setNivel(int novoNivel) {
         this.nivel = novoNivel;
+        System.out.println("Nivel atualizado com sucesso!!");
     }
 
     public void setPontuacao(int novoPontuacao) {
         this.pontuacao = novoPontuacao;
+        System.out.println("Pontuação atualizada com sucesso!!");
     }
 
     public void exibirInfo() {
@@ -35,13 +37,11 @@ public class Jogador {
         System.out.println("| #>> Id: " + idPerfil);
         System.out.println("| #>> Pontuação: " + pontuacao);
         System.out.println("| #>> Nivel: " + nivel);
-
     }
 
     public void exibirJogadores() {
         System.out.println("| #>> Nome: " + nome);
         System.out.println("| #>> Pontuação: " + pontuacao);
         System.out.println("| #>> Nivel: " + nivel);
-
     }
 }
